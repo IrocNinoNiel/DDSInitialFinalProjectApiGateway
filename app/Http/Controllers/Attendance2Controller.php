@@ -53,7 +53,7 @@
          }
 
         public function addAttendance(Request $request){
-            return $this->successResponse($this->attendance2Service->addAttendance1($request->all(),Response::HTTP_CREATED));
+            return $this->successResponse($this->attendance2Service->addAttendance2($request->all(),Response::HTTP_CREATED));
          }
 		
 

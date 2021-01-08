@@ -30,7 +30,7 @@
             return $this->performRequest('GET','/api/attendance/get');
         }
 
-        public function getEventAttendances1($id){
+        public function getEventAttendance1($id){
             return $this->performRequest('GET',"/api/attendance/get/{$id}");
         }
 

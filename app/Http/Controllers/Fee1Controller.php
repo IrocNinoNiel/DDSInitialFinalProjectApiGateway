@@ -39,7 +39,7 @@
         }
 
         public function findIfStudentPay($student_id){
-            return $this->successResponse($this->fee1Service->obtainFee1($fee_id));
+            return $this->successResponse($this->fee1Service->findStudentPay1($student_id));
         
         }
 
@@ -50,12 +50,12 @@
 	  
 
 	   public function updateFee(Request $request, $fee_id){
-		   return $this->successResponse($this->fee1Service->editUser1($request->all(),$fee_id));
+		   return $this->successResponse($this->fee1Service->editFee1($request->all(),$fee_id));
    
 	   
 	   }
 
-	   public function deleteStudentFee($student_id){
+	   public function deleteStudentFee($fee_id){
 		   return $this->successResponse($this->user1Service->deleteFee1($fee_id));
 
 	   }

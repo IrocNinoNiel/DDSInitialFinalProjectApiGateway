@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 // // Api Student
-$router->group(['prefix' => 'api/student1'],function () use ($router) {
+$router->group(['prefix' => 'api/student1','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Student1Controller@getStudents']);
     $router->get('/get/{student_id}',['uses' => 'Student1Controller@getStudent']);
     $router->post('/add',['uses' => 'Student1Controller@addStudent']);
@@ -27,7 +27,7 @@ $router->group(['prefix' => 'api/student1'],function () use ($router) {
 
 });
 
-$router->group(['prefix' => 'api/student2'],function () use ($router) {
+$router->group(['prefix' => 'api/student2','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Student2Controller@getStudents']);
     $router->get('/get/{student_id}',['uses' => 'Student2Controller@getStudent']);
     $router->post('/add',['uses' => 'Student2Controller@addStudent']);
@@ -37,7 +37,7 @@ $router->group(['prefix' => 'api/student2'],function () use ($router) {
 });
 
 // Api Event
-$router->group(['prefix' => 'api/event1'],function () use ($router) {
+$router->group(['prefix' => 'api/event1','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Event1Controller@getEvents']);
     $router->get('/get/{event_id}',['uses' => 'Event1Controller@getEvent']);
     $router->post('/add',['uses' => 'Event1Controller@addEvent']);
@@ -46,7 +46,7 @@ $router->group(['prefix' => 'api/event1'],function () use ($router) {
 
 });
 
-$router->group(['prefix' => 'api/event2'],function () use ($router) {
+$router->group(['prefix' => 'api/event2','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Event2Controller@getEvents']);
     $router->get('/get/{event_id}',['uses' => 'Event2Controller@getEvent']);
     $router->post('/add',['uses' => 'Event2Controller@addEvent']);
@@ -56,7 +56,7 @@ $router->group(['prefix' => 'api/event2'],function () use ($router) {
 });
 
 // Api Attendance
-$router->group(['prefix' => 'api/attendance1'],function () use ($router) {
+$router->group(['prefix' => 'api/attendance1','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Attendance1Controller@getAttendances']);
     $router->get('/get/event/{event_id}',['uses' => 'Attendance1Controller@getEventAttendance']);
     $router->get('/get/student/{student_id}',['uses' => 'Attendance1Controller@getStudentAttendance']);
@@ -66,7 +66,7 @@ $router->group(['prefix' => 'api/attendance1'],function () use ($router) {
     
 });
 
-$router->group(['prefix' => 'api/attendance2'],function () use ($router) {
+$router->group(['prefix' => 'api/attendance2','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Attendance2Controller@getAttendances']);
     $router->get('/get/event/{event_id}',['uses' => 'Attendance2Controller@getEventAttendance']);
     $router->get('/get/student/{student_id}',['uses' => 'Attendance2Controller@getStudentAttendance']);
@@ -77,7 +77,7 @@ $router->group(['prefix' => 'api/attendance2'],function () use ($router) {
 });
 
 // Api User
-$router->group(['prefix' => 'api/users1'],function () use ($router) {
+$router->group(['prefix' => 'api/users1','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'User1Controller@getUsers']);
     $router->get('/get/{user_id}',['uses' => 'User1Controller@getUser']);
     $router->post('/add',['uses' => 'User1Controller@addUser']);
@@ -90,7 +90,7 @@ $router->group(['prefix' => 'api/users1'],function () use ($router) {
    
 });
 
-$router->group(['prefix' => 'api/users2'],function () use ($router) {
+$router->group(['prefix' => 'api/users2','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'User2Controller@getUsers']);
     $router->get('/get/{user_id}',['uses' => 'User2Controller@getUser']);
     $router->post('/add',['uses' => 'User1Controller@addUser']);
@@ -98,14 +98,11 @@ $router->group(['prefix' => 'api/users2'],function () use ($router) {
     $router->put('/edit/{user_id}',['uses' => 'User1Controller@updateUser']);
 
     $router->post('/login',['uses' => 'User2Controller@verifyUser']);
-
-    
-   
 });
 
 
 // Api Fee
-$router->group(['prefix' => 'api/fee1'],function () use ($router) {
+$router->group(['prefix' => 'api/fee1','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Fee1Controller@getFees']);
     $router->get('/get/{fee_id}',['uses' => 'Fee1Controller@getFee']);
     $router->get('/get/student/{student_id}',['uses' => 'Fee1Controller@findIfStudentPay']);
@@ -115,7 +112,7 @@ $router->group(['prefix' => 'api/fee1'],function () use ($router) {
 
 });
 
-$router->group(['prefix' => 'api/fee2'],function () use ($router) {
+$router->group(['prefix' => 'api/fee2','middleware'=>'client.credentials'],function () use ($router) {
     $router->get('/get',['uses' => 'Fee2Controller@getFees']);
     $router->get('/get/{fee_id}',['uses' => 'Fee2Controller@getFee']);
     $router->get('/get/student/{student_id}',['uses' => 'Fee2Controller@findIfStudentPay']);
